@@ -5,7 +5,11 @@
 *.war
 *.ear
 
+# IDE Files #
+/.idea
+*.iml
 
+# System Files #
 .DS_Store
 .DS_Store?
 *.swp
