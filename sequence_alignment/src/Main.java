@@ -5,15 +5,24 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args){
-        // ------  global -------
         List<String> ls = Reader.read("HW1FILE1.txt");
-        Alignment alignment = GlobalAlign.search(ls.get(0), ls.get(2));
-        System.out.println(alignment);
-        System.out.println(alignment.a.length());
 
-        // ------ local ------
-        alignment = LocalAlign.search(ls.get(0), ls.get(2));
-        System.out.println(alignment);
-        System.out.println(alignment.a.length());
+        int size = ls.size();
+        for (int i=0;i<size;i++) {
+            for (int j = i + 1; j < size; j++) {
+                System.out.println(i + " compared with " + j);
+                // ------  global -------
+                Alignment alignment = GlobalAlign.search(ls.get(i), ls.get(j));
+                System.out.println("global");
+                System.out.println(alignment);
+//                System.out.println(alignment.a.length());
+
+                // ------ local ------
+                System.out.println("local");
+                alignment = LocalAlign.search(ls.get(i), ls.get(j));
+                System.out.println(alignment);
+//                System.out.println(alignment.a.length());
+            }
+        }
     }
 }
