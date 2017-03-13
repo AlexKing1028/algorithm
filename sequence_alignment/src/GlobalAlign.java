@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Created by wesley shi on 2017/3/3.
  */
@@ -60,9 +62,8 @@ public class GlobalAlign {
     }
 
     public static void main(String[] args){
-        String a = "xxabgexetqtqtqrewqworuoqjige";
-        String b = "xxcabgeeiworuoqjige";
-        Alignment alignment = GlobalAlign.search(a, b);
+        List<String> ls = Reader.read("HW1FILE1.txt");
+        Alignment alignment = GlobalAlign.search(ls.get(2), ls.get(0));
         System.out.println(alignment);
     }
 }
