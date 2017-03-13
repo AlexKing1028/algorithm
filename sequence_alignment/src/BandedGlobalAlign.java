@@ -148,7 +148,7 @@ class BandMatrix{
     int get(int x, int y){
         if (x - y > upperband || x - y < - lowerband){
 //            return Integer.MAX_VALUE;
-            return 100000;
+            return 1000000;
         }
         return mat[x - y + lowerband][y];
     }
@@ -165,7 +165,7 @@ class BandMatrix{
         for (int i=0; i< m; i++){
             for (int j=0; j<n; j++){
                 int tmp = get(j, i);
-                System.out.print((tmp == 100000? -1:tmp) + " ");
+                System.out.print((tmp == 1000000? -1:tmp) + " ");
             }
             System.out.println();
         }
