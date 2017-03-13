@@ -117,20 +117,8 @@ public class BandedGlobalAlign {
 
     public static void main(String[] args){
         List<String> ls = Reader.read("HW1FILE1.txt");
-//        List<String> ls = new ArrayList<>();
-//        ls.add("swlswlswlswlaaa");
-//        ls.add("swlswlsaab");
-        Alignment alignment = search(ls.get(2), ls.get(0));
+        Alignment alignment = search(ls.get(0), ls.get(1));
         System.out.println(alignment);
-        /**
-        BandMatrix bm = new BandMatrix(10, 12, 7);
-        for (int i=0; i< 10; i++){
-            for (int j=0;j<12; j++){
-                System.out.print(bm.get(j, i));
-            }
-            System.out.println();
-        }
-         **/
     }
 
 }

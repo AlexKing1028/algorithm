@@ -63,7 +63,7 @@ public class GlobalAlign {
 
     public static void main(String[] args){
         List<String> ls = Reader.read("HW1FILE1.txt");
-        Alignment alignment = GlobalAlign.search(ls.get(2), ls.get(0));
+        Alignment alignment = GlobalAlign.search(ls.get(0), ls.get(1));
         System.out.println(alignment);
     }
 }
