@@ -1,6 +1,7 @@
 package main.auth;
 
 import com.sun.javafx.robot.impl.FXRobotHelper;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,8 +54,30 @@ public class ConnectedListController extends BaseController{
     public void startAuthentication(ActionEvent actionEvent){
         // send message to other troopers
         println(console, "start authentication!!!!");
-        
 
+        authentication.setDisable(true);
+    }
+
+    public void stopAuthentication(ActionEvent actionEvent){
+        println(console, "stop authentication!!!!");
+        authentication.setDisable(false);
+    }
+
+    public void chooseCommander(ActionEvent actionEvent){
+        println(console, "choosing commander");
+        Thread t = new Thread(()->{
+            int r = new Random().nextInt(3000);
+            try {
+                Thread.sleep(r);
+            }catch (InterruptedException ie){
+                ie.printStackTrace();
+            }
+            Platform.runLater(()->{
+                println(console, "already chosen");
+                // jump to equipment opening page
+
+            });
+        });
     }
 
     public void back(ActionEvent actionEvent){
